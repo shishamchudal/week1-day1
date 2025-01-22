@@ -56,31 +56,33 @@ td {
   text-align: center;
 }
 caption {
-    text-transform: uppercase;
-    font-weight: 600;
-    height: 40px;
-    padding-top: 15px;
-    color: #753a30;
+  text-transform: uppercase;
+  font-weight: 600;
+  height: 40px;
+  padding-top: 15px;
+  color: #753a30;
 }
 label {
-    display: block;
-    margin: 15px 0 0 0;
+  display: block;
+  margin: 15px 0 0 0;
 }
 input {
-    width: 300px;
+  width: 300px;
 }
 input[type="radio"] {
-    width: 25px;
+  width: 25px;
 }
 textarea {
-    width: 300px;
+  width: 300px;
 }
 input[type="submit"] {
-    display: block;
-    margin: 20px 0 10px 0;
-    width: 100px;
+  display: block;
+  margin: 20px 0 10px 0;
+  width: 100px;
 }
-
+main #album #photo img {
+  width: 400px;
+}
 footer {
   height: 40px;
   background-color: rgb(129, 141, 179);
