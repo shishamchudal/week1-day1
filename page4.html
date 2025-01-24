@@ -27,12 +27,12 @@
         <p>My Fourth paragraph.</p>
 
         <ul id="album">
-          <!-- <li id="photo"><img src="images/winterland1.jpg"></li>
-          <li id="photo"><img src="images/winterland2.jpg"></li>
-          <li id="photo"><img src="images/winterland3.jpg"></li>
-          <li id="photo"><img src="images/winterland4.jpg"></li>
-          <li id="photo"><img src="images/winterland5.jpg"></li>
-          <li id="photo"><img src="images/winterland6.jpg"></li> -->
+          <!-- <li id="photo"><img src="images/winterland1.jpg" /></li>
+          <li id="photo"><img src="images/winterland2.jpg" /></li>
+          <li id="photo"><img src="images/winterland3.jpg" /></li>
+          <li id="photo"><img src="images/winterland4.jpg" /></li>
+          <li id="photo"><img src="images/winterland5.jpg" /></li>
+          <li id="photo"><img src="images/winterland6.jpg" /></li> -->
         </ul>
       </main>
       <!-- End Main Content -->
@@ -44,20 +44,60 @@
     <!-- End Container -->
   </body>
   <script>
-    var photos = []; // Declare an empty array to store image element.
-    var fileNames = []; // Declare an empty array to store image file names.
-    var imageList = []; // Declare an empty array to store html list that contain an image.
-    var image; // Declare an empty variable to store the assembled image list codes.
-    var openList = "<li id='photo'>"; // Declare variable to contain open list tag.
-    var closeList = "</li>"; // Declare variable to contain close list tag.
+    var photos = []; // Array to store image elements
+    var fileNames = []; // Array to store image file names
+    var imageList = []; // Array to store HTML list containing images
+    var captionTexts = [
+      "Majestic Cliffside View",
+      "Sunset Over the Cliff Edge",
+      "The Rocky Outcrop",
+      "Cliff's Edge Adventure",
+      "Waves Crashing Below",
+      "Overlooking the Vast Ocean",
+      "Perched Above the Abyss",
+      "Cliffside Serenity",
+      "The Bold Cliff's Edge",
+      "Nature's Majestic Overlook",
+    ];
 
-    for (var i=0; i<6; i++){
-      fileNames.push("winterland"+(i+1));
-      photos.push("<img src='images/" + fileNames[i] + ".jpg'>");
-      image = openList + photos[i] + closeList;
-      imageList.push(image);
+    var descTexts = [
+      "A beautiful snowy landscape with pine trees.",
+      "Sunlight glistening on fresh snow.",
+      "A cozy cabin in a snowy forest.",
+      "Majestic mountains covered in snow.",
+      "A serene frozen lake at sunset.",
+      "Skiers enjoying the slopes.",
+      "A snowy path leading into the woods.",
+      "Footprints in fresh snow.",
+      "A snowman in a picturesque field.",
+      "Snow-covered rooftops in a quaint village.",
+    ]; // Array for descriptions
+
+    var image; // Variable to store assembled image list codes
+    var openList; // Variable to contain open list tag
+    var closeList = "</li>"; // Close list tag
+    var openCaptionTag = "<p class='caption'>"; // Caption tag
+    var closeCaptionTag = "</p>"; // Close caption tag
+    var openDescTag = "<p class='description'>"; // Description tag
+    var closeDescTag = "</p>"; // Close description tag
+
+    for (var i = 0; i < 10; i++) {
+      fileNames.push("image" + (i + 1)); // Generate file names
+      photos.push("<img src='images/gallery/" + fileNames[i] + ".jpeg'>"); // Create image elements
+      openList = "<li id='photo'>"; // Update list tag with unique IDs
+      image =
+        openList +
+        photos[i] +
+        openCaptionTag +
+        captionTexts[i] +
+        closeCaptionTag +
+        openDescTag +
+        descTexts[i] +
+        closeDescTag +
+        closeList;
+      imageList.push(image); // Add assembled image code to imageList
     }
 
-    document.getElementById("album").innerHTML = imageList;
+    document.getElementById("album").innerHTML = imageList.join(""); // Insert all images into the album
   </script>
 </html>
