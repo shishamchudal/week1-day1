@@ -83,10 +83,59 @@ input[type="submit"] {
 main #album #photo img {
   width: 400px;
 }
+#album {
+  padding-left: 0px;
+}
 footer {
   height: 40px;
   background-color: rgb(129, 141, 179);
   text-align: center;
   padding-top: 20px;
   color: rgb(211, 218, 240);
+}
+
+main #album {
+  display: grid; /* Use grid layout for the gallery */
+  grid-template-columns: repeat(3, minmax(200px, 1fr)); /* Responsive column sizes */
+  gap: 20px; /* Add spacing between items */
+  justify-items: center; /* Center items horizontally within the grid */
+  padding: 20px; /* Add padding inside the grid */
+  box-sizing: border-box; /* Include padding in width calculation */
+  overflow: hidden; /* Prevent overflow */
+}
+
+
+main #album li {
+  list-style-type: none;
+  position: relative;
+  text-align: center;
+  cursor: pointer;
+  width: 100%; /* Ensure images scale properly within the grid */
+  max-width: 300px; /* Optional: Set a maximum width for each image */
+}
+
+.caption {
+  text-align: center;
+  margin-top: 5px;
+  color: #333;
+  text-transform: uppercase;
+}
+
+.description {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -100%);
+  visibility: hidden;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 0.9em;
+  text-align: center;
+  z-index: 10;
+}
+
+/* Show description on hover */
+li:hover .description {
+  visibility: visible;
 }
