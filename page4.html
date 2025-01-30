@@ -34,6 +34,11 @@
           <li id="photo"><img src="images/winterland5.jpg" /></li>
           <li id="photo"><img src="images/winterland6.jpg" /></li> -->
         </ul>
+        <div id="infoBox" class="info-box">
+          <h2 id="infoHeading"></h2>
+          <p id="infoText"></p>
+          <a href="#" id="closeInfoBox">Click This To Close</a>
+        </div>
       </main>
       <!-- End Main Content -->
 
@@ -99,5 +104,30 @@
     }
 
     document.getElementById("album").innerHTML = imageList.join(""); // Insert all images into the album
+
+    // Information Box Functionality
+    var infoBox = document.getElementById("infoBox");
+    var infoHeading = document.getElementById("infoHeading");
+    var infoText = document.getElementById("infoText");
+    var closeInfoBox = document.getElementById("closeInfoBox");
+
+    // Add click event listeners to all description elements
+    var descriptions = document.querySelectorAll(".description");
+    descriptions.forEach(function (desc, index) {
+      desc.addEventListener("click", function () {
+        // Populate the info box with the corresponding caption and description
+        infoHeading.textContent = captionTexts[index];
+        infoText.textContent = descTexts[index];
+
+        // Show the info box
+        infoBox.style.display = "block";
+      });
+    });
+
+    // Close the info box when the close link is clicked
+    closeInfoBox.addEventListener("click", function (e) {
+      e.preventDefault(); // Prevent default link behavior
+      infoBox.style.display = "none";
+    });
   </script>
 </html>
