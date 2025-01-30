@@ -122,6 +122,7 @@ main #album {
   margin-top: 5px;
   color: #333;
   text-transform: uppercase;
+  padding: 10px;
 }
 
 .description {
@@ -140,4 +141,50 @@ main #album {
 
 #album li:hover .description {
   visibility: visible;
+}
+
+/* Info Box */
+.info-box {
+  display: none; /* Hidden by default */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.85); /* Dark semi-transparent background */
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+  z-index: 1000;
+  width: 350px;
+  text-align: left;
+  font-family: serif; /* Elegant font style */
+}
+
+.info-box h2 {
+  margin-bottom: 10px;
+  font-size: 1.8em;
+  color: #ffffff;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.info-box p {
+  margin-bottom: 15px;
+  font-size: 1em;
+  color: #dddddd;
+  line-height: 1.5;
+}
+
+.info-box a {
+  color: #ffcc00;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.1em;
+  display: block; /* Makes the link a block element */
+  text-align: center; /* Centers the text */
+  margin-top: 10px; /* Adds some spacing */
+}
+
+.info-box a:hover {
+  text-decoration: underline;
 }
