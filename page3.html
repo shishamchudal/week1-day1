@@ -31,19 +31,23 @@
             <legend>User personal information</legend>
             <label>Enter your full name</label>
             <input type="text" name="name" />
-            <label>Enter your email</label>
-            <input type="email" name="email" />
-            <label>Enter your phone</label>
-            <input type="text" name="phone" />
             <br /><label>Select your gender</label>
             <input type="radio" name="gender" value="male" />Male
             <input type="radio" name="gender" value="female" />Female<br />
-
             <label>How should we contact you?</label>
-            <select>
-              <option>Email</option>
-              <option>Phone</option>
+            <select id="contact_type">
+              <option>Select One</option>
+              <option value="Email">Email</option>
+              <option value="Phone">Phone</option>
             </select>
+            <div id="email" style="display: none;">
+              <label>Enter your email</label>
+              <input type="email" name="email" />
+            </div>
+            <div id="phone" style="display: none;">
+              <label>Enter your phone</label>
+              <input type="text" name="phone" />
+            </div>
             <label>Tell us the reason of your visit today:</label>
             <textarea rows="5" cols="30"></textarea>
             <input type="submit" value="sign-up" />
@@ -57,5 +61,6 @@
       <!-- End Footer -->
     </div>
     <!-- End Container -->
+    <script src="js/contact.js"></script>
   </body>
 </html>
