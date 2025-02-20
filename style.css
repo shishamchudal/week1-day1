@@ -69,7 +69,7 @@ label {
 input {
   width: 300px;
 }
-input[type="radio"] {
+#contact input[type="radio"] {
   width: 25px;
 }
 textarea {
@@ -116,6 +116,7 @@ main #album {
   height: auto; /* Maintain aspect ratio */
   display: block;
   overflow: hidden;
+  cursor: pointer;
 }
 .caption {
   text-align: center;
